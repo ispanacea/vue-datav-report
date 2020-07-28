@@ -1,42 +1,42 @@
 <template>
-  <div class="common-card">
-    <div class="title">{{ title }}</div>
-    <div class="value">{{ value }}</div>
-    <div class="chart">
+  <el-card shadow="hover" class="chartCard">
+    <div class="chartTitle">{{ title }}</div>
+    <div class="chartValue">{{ value }}</div>
+    <div class="chartContent">
       <slot name="chart"></slot>
     </div>
-    <div class="line"></div>
-    <div class="total">
+    <div class="chartTotal">
       <slot name="total"></slot>
     </div>
-  </div>
+  </el-card>
 </template>
 
 <script>
 export default {
   props: {
     title: {
-      type: String
+      type: String,
+      default: ''
     },
     value: {
-      type: String
+      type: String,
+      default: ''
     }
   }
 }
 </script>
 
-<style lang="less">
+<style>
 .emphasis {
   margin-left: 10px;
   font-weight: 700;
-  color: #333;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .increase {
   width: 0;
   height: 0;
-  border-width: 5px;
+  border-width: 4px;
   border-color: transparent transparent red transparent;
   border-style: solid;
   margin: 0 0 4px 5px;
@@ -45,7 +45,7 @@ export default {
 .decrease {
   width: 0;
   height: 0;
-  border-width: 5px;
+  border-width: 4px;
   border-color: green transparent transparent transparent;
   border-style: solid;
   margin: 4px 0 0 5px;
@@ -53,25 +53,33 @@ export default {
 </style>
 
 <style lang="less" scoped>
-.common-card {
-  font-size: 12px;
-  color: #000;
+.chartCard {
+  font-size: 14px;
+  padding: 20px 24px 8px;
+  color: rgba(0, 0, 0, 0.65);
 
-  .title {
-    color: #999;
+  /deep/ .el-card__body {
+    padding: 0;
   }
-  .value {
-    font-size: 25px;
+
+  .chartTitle {
+    color: rgba(0, 0, 0, 0.45);
+  }
+
+  .chartValue {
+    font-size: 30px;
     font-weight: 700;
-    margin: 5px 0;
     letter-spacing: 1px;
+    color: rgba(0, 0, 0, 0.85);
   }
-  .chart {
+
+  .chartContent {
     height: 50px;
-    font-size: 12px;
   }
-  .line {
-    margin: 10px 0;
+
+  .chartTotal {
+    margin-top: 10px;
+    padding-top: 10px;
     border-top: 1px solid #eee;
   }
 }

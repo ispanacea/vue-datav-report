@@ -1,33 +1,22 @@
 <template>
   <el-row :gutter="20">
     <el-col :span="6">
-      <el-card shadow="hover">
-        <total-sales></total-sales>
-      </el-card>
+      <total-sales></total-sales>
     </el-col>
     <el-col :span="6">
-      <el-card shadow="hover">
-        <total-orders></total-orders>
-      </el-card>
+      <total-orders></total-orders>
     </el-col>
     <el-col :span="6">
-      <el-card shadow="hover">
-        <today-users></today-users>
-      </el-card>
+      <today-users></today-users>
     </el-col>
     <el-col :span="6">
-      <el-card shadow="hover">
-        <total-users></total-users>
-      </el-card>
+      <total-users></total-users>
     </el-col>
   </el-row>
 </template>
 
 <script>
-import TotalSales from '../TotalSales'
-import TotalOrders from '../TotalOrders'
-import TodayUsers from '../TodayUsers'
-import TotalUsers from '../TotalUsers'
+import { TotalSales, TotalOrders, TodayUsers, TotalUsers } from './components'
 export default {
   components: {
     TotalSales,
@@ -37,5 +26,3 @@ export default {
   }
 }
 </script>
-
-<style></style>
